@@ -1,7 +1,45 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosteing a website</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mitch-Palczewski</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Navigation (optional) -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4">
+      <h2 class="text-xl font-semibold">Mitch Palczewski</h2>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-center mb-8">Projects</h1>
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
+      <!-- Project One -->
+      <a href="pNBSP.html" class="block">
+        <div class="bg-white overflow-hidden  hover:shadow-lg transition-shadow">
+          <img src="NBSP-imgs\5x5 drawing.png" alt="Project One Thumbnail" class="w-full h-auto">
+          <div class="p-4">
+            <h2 class="text-xl font-semibold">Next Brush Stroke Predictor</h2>
+          </div>
+        </div>
+      </a>
+      <!-- Project Two -->
+      <a href="" class="block">
+        <div class="bg-white overflow-hidden shadow hover:shadow-lg transition-shadow">
+          <img src="https://via.placeholder.com/400x300" alt="Project Two Thumbnail" class="w-full h-auto">
+          <div class="p-4">
+            <h2 class="text-xl font-semibold">TBD Under Construction</h2>
+          </div>
+        </div>
+      </a>
+      <!-- Add more project cards as needed -->
+    </div>
+  </main>
 </body>
-</html
+</html>
