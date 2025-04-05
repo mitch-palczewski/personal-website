@@ -3,9 +3,7 @@
     export let data;
 </script>
 
-<div class="h-screen bg-cover bg-top p-5" style="background-image: url('/main-assets/wavefunctionmountains.png')">
-    
-    
+<div class="min-h-screen bg-cover bg-top p-5" style="background-image: url('/main-assets/wavefunctionmountains.png')">
     
     {#each data.summaries as { name, image, description, link , htmlContent}}
         <Card
