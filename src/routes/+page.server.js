@@ -6,7 +6,8 @@ export function load() {
 			name: project.name,
 			image: project.image,
             link: project.link,
-            description: project.description
+            description: project.description,
+			htmlContent: project.htmlContent
 		}))
 	};
 }

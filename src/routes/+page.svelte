@@ -7,13 +7,14 @@
     
     
     
-    {#each data.summaries as { name, image, description, link }}
+    {#each data.summaries as { name, image, description, link , htmlContent}}
         <Card
             title={name}
             description={description}
             imageUrl={image}
             link={link}
             bg_color = "bg-blue-50"
+            htmlContent = {htmlContent}
         />
     {/each}
 </div>
