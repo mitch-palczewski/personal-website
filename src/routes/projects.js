@@ -2,8 +2,8 @@ export const projects = [
     {
         name: 'Next Brush Stroke Predictor',
         link: '/projects/next-brush-stroke-predictor',
-        image: '#',
-        description: 'Discription for NBSP'
+        image: '/project-assets/nbsp-imgs/screenshotnbsp.png',
+        description: 'An AI drawing application that captures the users brush strokes and generate images.'
     },
     
     {

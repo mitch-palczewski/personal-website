@@ -3,9 +3,9 @@
     export let data;
 </script>
 
-<div class="h-screen bg-cover bg-top" style="background-image: url('/main_assets/wavefunctionmountains.png')">
-    <h1>Home</h1>
-    <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<div class="h-screen bg-cover bg-top p-5" style="background-image: url('/main-assets/wavefunctionmountains.png')">
+    
+    
     
     {#each data.summaries as { name, image, description, link }}
         <Card
@@ -13,6 +13,7 @@
             description={description}
             imageUrl={image}
             link={link}
+            bg_color = "bg-blue-50"
         />
     {/each}
 </div>
