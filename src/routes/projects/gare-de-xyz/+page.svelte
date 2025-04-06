@@ -184,7 +184,7 @@
 	</div>
 </div>
 
-<div class="grid grid-cols-1 gap-1 bg-blue-500 p-5 sm:grid-cols-1 md:grid-cols-3">
+<div class="grid grid-cols-1 gap-1 bg-blue-500 pt-20 p-5 sm:grid-cols-1 md:grid-cols-3">
 	<img
 		src="\project-assets\gare-de-xyz-imgs\Bull.png"
 		alt="Game Screenshots"
