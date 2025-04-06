@@ -10,7 +10,7 @@ export const projects = [
 	},
 
 	{
-		name: 'Gare De XYZ',
+		name: 'Gare De Vector3',
 		link: '/projects/gare-de-xyz',
 		image: '/project-assets/gare-de-xyz-imgs/sc1.png',
 		description: 'A 3D game constructing a memory',
