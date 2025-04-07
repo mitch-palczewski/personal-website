@@ -77,6 +77,7 @@
 				src="\project-assets\gare-de-xyz-imgs\hyperrhizeye.png"
 				alt="Hyperrhiz Title"
 				class="card-image h-auto w-full p-2"
+				loading="lazy"
 			/>
 			<h1 class="text-l pb-3 text-center">In Accociation with Hyperrhiz New Media Cultures</h1>
 		</a>
@@ -88,21 +89,25 @@
 		src="\project-assets\gare-de-xyz-imgs\sc1.png"
 		alt="Game Screenshots"
 		class="h-auto w-full shadow-md"
+		loading="lazy"
 	/>
 	<img
 		src="\project-assets\gare-de-xyz-imgs\sc2.png"
 		alt="Game Screenshots"
 		class="h-auto w-full shadow-md"
+		loading="lazy"
 	/>
 	<img
 		src="\project-assets\gare-de-xyz-imgs\sc3.png"
 		alt="Game Screenshots"
 		class="h-auto w-full shadow-md"
+		loading="lazy"
 	/>
 	<img
 		src="\project-assets\gare-de-xyz-imgs\sc4.png"
 		alt="Game Screenshots"
 		class="h-auto w-full shadow-md"
+		loading="lazy"
 	/>
 </div>
 
