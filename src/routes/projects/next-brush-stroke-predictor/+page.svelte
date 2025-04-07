@@ -1,27 +1,19 @@
 <script lang="ts">
-	type ImageModule = { default: string };
-
-	// Import all images with .jpg and .png extensions from the specified folder eagerly.
-	const imageModules = import.meta.glob(
-		'/src/lib/image-collections/gare-de-xyz-sketches/*.{jpg,png}',
-		{
-			eager: true
-		}
-	) as Record<string, ImageModule>;
-
-	// Extract the default exports (i.e., the image URLs)
-	let images = Object.entries(imageModules).map(([_, module]) => module.default);
-
-	let currentIndex = 0;
-
-	const nextImage = () => {
-		currentIndex = (currentIndex + 1) % images.length;
+	const images = Object.keys(
+		import.meta.glob('/src/lib/image-collections/nbsp-images/*.{jpg,png}')
+	);
+	const get_random_images = (count: number): string[] => {
+		const shuffled = images.sort(() => 0.5 - Math.random());
+		return shuffled.slice(0, count);
 	};
-
-	const prevImage = () => {
-		currentIndex = (currentIndex - 1 + images.length) % images.length;
-	};
+	const random_img_set1 = get_random_images(40);
 </script>
+
+<div class="grid grid-cols-10 gap-1 bg-blue-500 p-5">
+	{#each random_img_set1 as img}
+		<img src={img} alt="" class="shadow-lg" />
+	{/each}
+</div>
 
 <h1 class="mb-8 text-center text-3xl font-bold">Next Brush Stroke Predictor</h1>
 <!-- Images Grid -->
@@ -127,28 +119,28 @@
 		<h4 class="mb-8 text-center text-3xl font-bold">Database: Origins</h4>
 	</div>
 	<!-- G4 -->
-     <div>
-        <div class="aspect-w-16 aspect-h-8 mx-auto h-80 w-full mb-3">
-            <iframe
-                class="h-full w-full"
-                src="https://youtube.com/embed/7kp6JdZU3A0"
-                frameborder=""
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                title="Video showcasing Next Brush Stroke Predictor"
-            ></iframe>
-        </div>
-        <div class="aspect-w-16 aspect-h-8 mx-auto h-80 w-full">
-            <iframe
-                class="h-full w-full"
-                src="https://youtube.com/embed/zm5aYQVWDbI"
-                frameborder=""
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                title="Video showcasing Next Brush Stroke Predictor"
-            ></iframe>
-        </div>
-     </div>
+	<div>
+		<div class="aspect-w-16 aspect-h-8 mx-auto mb-3 h-80 w-full">
+			<iframe
+				class="h-full w-full"
+				src="https://youtube.com/embed/7kp6JdZU3A0"
+				frameborder=""
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+				title="Video showcasing Next Brush Stroke Predictor"
+			></iframe>
+		</div>
+		<div class="aspect-w-16 aspect-h-8 mx-auto h-80 w-full">
+			<iframe
+				class="h-full w-full"
+				src="https://youtube.com/embed/zm5aYQVWDbI"
+				frameborder=""
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+				title="Video showcasing Next Brush Stroke Predictor"
+			></iframe>
+		</div>
+	</div>
 
 	<div class="mt-8 text-center">
 		<h2 class="pt-3 text-xl font-semibold">On Tension</h2>
@@ -178,6 +170,6 @@
 <img
 	src="\project-assets\nbsp-imgs\model_method_example.png"
 	alt="Model Method Example"
-	class="mx-auto  pt-8"
+	class="mx-auto pt-8"
 />
 <h4 class="pb-8 text-center text-xl font-bold">Experimental Algorithm Design</h4>

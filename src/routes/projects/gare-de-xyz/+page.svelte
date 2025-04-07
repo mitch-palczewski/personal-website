@@ -1,26 +1,12 @@
 <script lang="ts">
-	type ImageModule = { default: string };
-
-	// Import all images with .jpg and .png extensions from the specified folder eagerly.
-	const imageModules = import.meta.glob(
-		'/src/lib/image-collections/gare-de-xyz-sketches/*.{jpg,png}',
-		{
-			eager: true
-		}
-	) as Record<string, ImageModule>;
-
-	// Extract the default exports (i.e., the image URLs)
-	let images = Object.entries(imageModules).map(([_, module]) => module.default);
-
-	let currentIndex = 0;
-
-	const nextImage = () => {
-		currentIndex = (currentIndex + 1) % images.length;
+	const images = Object.keys(
+		import.meta.glob('/src/lib/image-collections/gare-de-xyz-sketches/*.{jpg,png}')
+	);
+	const get_random_images = (count: number): string[] => {
+		const shuffled = images.sort(() => 0.5 - Math.random());
+		return shuffled.slice(0, count);
 	};
-
-	const prevImage = () => {
-		currentIndex = (currentIndex - 1 + images.length) % images.length;
-	};
+	const random_img_set1 = get_random_images(6);
 </script>
 
 <!--TITLE-->
@@ -29,17 +15,16 @@
 	style="background-image: url('/project-assets/gare-de-xyz-imgs/mountain3.png')"
 >
 	<h1 class="p-8 py-13 text-center text-5xl font-bold text-red-100 underline">Gare De Vector3</h1>
-
-    <div class="mx-100 bg-white border-4 border-gray-100">
-        <iframe
-            class="h-[400px] w-full"
-            src="https://youtube.com/embed/IzUIJQAKfHw"
-            frameborder=""
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="Next Brush Stroke Predictor Tutorial"
-        ></iframe>
-    </div>
+	<div class="mx-2 sm:mx-10 md:mx-50 lg:mx-70 bg-white border-4 border-gray-100">
+		<iframe
+			class="h-[200px] sm:h-[400px] w-full"
+			src="https://youtube.com/embed/IzUIJQAKfHw"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen
+			title="Next Brush Stroke Predictor Tutorial"
+		></iframe>
+	</div>
 </div>
 
 <!--HYPERRHIZ LINK-->
@@ -48,7 +33,7 @@
 		href="https://secure.hyperrhiz.io/mitchell/index.html"
 		target="_blank"
 		rel="noopener"
-		class="mx-10 block bg-blue-900 p-2 py-10 text-center text-6xl font-bold hover:bg-orange-300 hover:underline"
+		class="mx-10 block bg-blue-900 p-2 py-10 text-center text-6xl text-white font-bold hover:bg-orange-300 hover:text-black hover:underline"
 	>
 		Play Gare De Vector3 on the web
 	</a>
@@ -56,7 +41,7 @@
 		href="https://mitchpalczewski.itch.io/gare-de-vector3"
 		target="_blank"
 		rel="noopener"
-		class="mx-10 block bg-blue-900 p-2 py-10 text-center text-6xl font-bold hover:bg-orange-300 hover:underline"
+		class="mx-10 block bg-blue-900 p-2 py-10 text-center text-white text-6xl font-bold hover:bg-orange-300  hover:text-black hover:underline"
 	>
 		Or download and play from itch.io
 	</a>
@@ -111,49 +96,49 @@
 	/>
 </div>
 
-<div class="bg-blue-500 p-5 px-75">
-    <div class="bg-orange-100 p-1">
-        <p class="p-3">
-            While backpacking through Europe, I made a mission of capturing my travels through photos,
-            sketches, and notes. Through the act of making the experience ingrained in my memory and person.
-            Without much thought or contemplation, I pursued the world in its totality and stumbled into the
-            work of an artist. The created material documents an artistic awakening and became a touchstone
-            to the self.
-        </p>
-        <p class="p-3">
-            Gare de Vector3 is a series of environments built from this scattering of documentation.
-            Materials are weaved together to build a structure of context, where each material enhances the
-            meaning of all others. Elements are arranged in a 3D digital world to form architectural space.
-            Utilizing the prompt ‘blanket forts', these spaces are inhabited by the artist’s memories and
-            built from found materials. Gare de Vector3 does not intend on capturing the physical world. The
-            project instead collages physical and non-physical materials to assemble the artist’s memory and
-            imbed a structure with the artist’s spirit. In this art piece, agents can traverse and interact
-            with the digital environment. The work invites you to step into the artist's shoes and
-            participate in an exploration of space, accessing and sharing the spirit of the artist. The
-            interpretation of the physical space is left undefined to be felt and contemplated.
-        </p>
-        <p class="p-3">
-            Memory is often observed as fragments strung together with our imagination to create something
-            more coherent. We place data points in a web and fill in the gaps to reveal a picture of
-            reality, like a set of stars void of meaning joined to represent a constellation. This was the
-            thought process when designing the spaces of Gare de Vector3. Key materials or ideas anchor the
-            spaces and found media fills in the gaps. As each piece of material is added, the information
-            the structure holds grows exponentially because information lies not just in the material but in
-            each of its relationships.
-        </p>
-        <p class="p-3"> 
-            So, what does it mean to create a structure of a memory, and how does that relate to the spirit
-            and the self? Memory is liquid. It is subject to change and influence. A memory does not just
-            capture an event! All that precedes it frames and wraps the memory in context. Nor is a memory
-            static, it is ever bending and distorting, filtered by the events of the present. In this way,
-            memory transcends time to capture the entire self: past, present, and future. To materialize a
-            memory is to embed an object with a spirit. Once materialized, an object imbedded with memory
-            separates from the self and obtains a self of its own. Like a newborn child, it retains
-            attributes of the parent, but its personality diverges as it grows. This spirit can be observed
-            in qualities of the object, its personality, its affect on space, and its interaction with
-            agents.
-        </p>
-    </div>
+<div class="bg-blue-500 p-5 sm:px-5 md:px-20 lg:px-75">
+	<div class="bg-orange-100 p-2 sm:p-3 md:p-5">
+		<p class="p-2 sm:p-3">
+			While backpacking through Europe, I made a mission of capturing my travels through photos,
+			sketches, and notes. Through the act of making the experience ingrained in my memory and person.
+			Without much thought or contemplation, I pursued the world in its totality and stumbled into the
+			work of an artist. The created material documents an artistic awakening and became a touchstone
+			to the self.
+		</p>
+		<p class="p-2 sm:p-3">
+			Gare de Vector3 is a series of environments built from this scattering of documentation.
+			Materials are weaved together to build a structure of context, where each material enhances the
+			meaning of all others. Elements are arranged in a 3D digital world to form architectural space.
+			Utilizing the prompt ‘blanket forts', these spaces are inhabited by the artist’s memories and
+			built from found materials. Gare de Vector3 does not intend on capturing the physical world. The
+			project instead collages physical and non-physical materials to assemble the artist’s memory and
+			imbed a structure with the artist’s spirit. In this art piece, agents can traverse and interact
+			with the digital environment. The work invites you to step into the artist's shoes and
+			participate in an exploration of space, accessing and sharing the spirit of the artist. The
+			interpretation of the physical space is left undefined to be felt and contemplated.
+		</p>
+		<p class="p-2 sm:p-3">
+			Memory is often observed as fragments strung together with our imagination to create something
+			more coherent. We place data points in a web and fill in the gaps to reveal a picture of
+			reality, like a set of stars void of meaning joined to represent a constellation. This was the
+			thought process when designing the spaces of Gare de Vector3. Key materials or ideas anchor the
+			spaces and found media fills in the gaps. As each piece of material is added, the information
+			the structure holds grows exponentially because information lies not just in the material but in
+			each of its relationships.
+		</p>
+		<p class="p-2 sm:p-3"> 
+			So, what does it mean to create a structure of a memory, and how does that relate to the spirit
+			and the self? Memory is liquid. It is subject to change and influence. A memory does not just
+			capture an event! All that precedes it frames and wraps the memory in context. Nor is a memory
+			static, it is ever bending and distorting, filtered by the events of the present. In this way,
+			memory transcends time to capture the entire self: past, present, and future. To materialize a
+			memory is to embed an object with a spirit. Once materialized, an object imbedded with memory
+			separates from the self and obtains a self of its own. Like a newborn child, it retains
+			attributes of the parent, but its personality diverges as it grows. This spirit can be observed
+			in qualities of the object, its personality, its affect on space, and its interaction with
+			agents.
+		</p>
+	</div>
 </div>
 
 <div class="bg-blue-500">
@@ -164,33 +149,21 @@
 	/>
 </div>
 
-<!-- SKETCHES IMAGE CAROUSEL -->
+<!-- Random Images-->
 <div class="min-h-screen bg-blue-500 bg-cover bg-top p-5">
-	<div class="relative mx-auto h-[600px] w-full max-w-screen-md">
-		<a href="\projects\gare-de-xyz\sketchbook" target="_blank" rel="noopener" class="block">
-			<img
-				src={images[currentIndex]}
-				alt="Image {currentIndex + 1}"
-				class="mx-auto max-h-[700px] w-auto"
-				loading="lazy"
-			/>
-		</a>
-		<button
-			on:click={prevImage}
-			class="absolute top-1/2 left-[-70px] -translate-y-1/2 transform bg-gray-800 px-4 py-2 text-white"
-		>
-			&lt;
-		</button>
-		<button
-			on:click={nextImage}
-			class="absolute top-1/2 right-[-70px] -translate-y-1/2 transform bg-gray-800 px-4 py-2 text-white"
-		>
-			&gt;
-		</button>
-	</div>
+	<a href="\projects\gare-de-xyz\sketchbook" target="_blank" rel="noopener" class="block group">
+		<div class="grid grid-cols-3 gap-1 bg-blue-500 p-5">
+			{#each random_img_set1 as img}
+				<img src={img} alt="" class="shadow-lg" />
+			{/each}
+		</div>
+		<h1 class="text-center text-3xl group-hover:bg-orange-300 transition-colors duration-300">
+			View Entire Sketchbook
+		</h1>
+	</a>
 </div>
 
-<div class="grid grid-cols-1 gap-1 bg-blue-500 pt-20 p-5 sm:grid-cols-1 md:grid-cols-3">
+<div class="grid grid-cols-1 gap-1 bg-blue-500 pt-5 p-5 sm:grid-cols-1 md:grid-cols-3">
 	<img
 		src="\project-assets\gare-de-xyz-imgs\Bull.png"
 		alt="Game Screenshots"
