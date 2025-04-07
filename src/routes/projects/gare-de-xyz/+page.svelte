@@ -167,6 +167,7 @@
 				src={images[currentIndex]}
 				alt="Image {currentIndex + 1}"
 				class="mx-auto max-h-[700px] w-auto"
+				loading="lazy"
 			/>
 		</a>
 		<button
@@ -189,15 +190,18 @@
 		src="\project-assets\gare-de-xyz-imgs\Bull.png"
 		alt="Game Screenshots"
 		class="h-auto w-full bg-orange-100 shadow-md"
+		loading="lazy"
 	/>
 	<img
 		src="\project-assets\gare-de-xyz-imgs\RedCloud.png"
 		alt="Game Screenshots"
 		class="h-auto w-full bg-orange-100 shadow-md"
+		loading="lazy"
 	/>
 	<img
 		src="\project-assets\gare-de-xyz-imgs\Spookyman .png"
 		alt="Game Screenshots"
 		class="h-auto w-full bg-orange-100 shadow-md"
+		loading="lazy"
 	/>
 </div>

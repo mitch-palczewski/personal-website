@@ -1,3 +1,28 @@
+<script lang="ts">
+	type ImageModule = { default: string };
+
+	// Import all images with .jpg and .png extensions from the specified folder eagerly.
+	const imageModules = import.meta.glob(
+		'/src/lib/image-collections/gare-de-xyz-sketches/*.{jpg,png}',
+		{
+			eager: true
+		}
+	) as Record<string, ImageModule>;
+
+	// Extract the default exports (i.e., the image URLs)
+	let images = Object.entries(imageModules).map(([_, module]) => module.default);
+
+	let currentIndex = 0;
+
+	const nextImage = () => {
+		currentIndex = (currentIndex + 1) % images.length;
+	};
+
+	const prevImage = () => {
+		currentIndex = (currentIndex - 1 + images.length) % images.length;
+	};
+</script>
+
 <h1 class="mb-8 text-center text-3xl font-bold">Next Brush Stroke Predictor</h1>
 <!-- Images Grid -->
 <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
@@ -95,7 +120,7 @@
 	<!-- G3 -->
 	<div>
 		<img src="\project-assets\nbsp-imgs\img5x5 .png" alt="5x5 Generated Images" class=" " />
-		<h4 class="mb-8 text-center text-3xl font-bold">Database: Fondations</h4>
+		<h4 class="mb-8 text-center text-3xl font-bold">Database: Foundations</h4>
 	</div>
 	<div>
 		<img src="\project-assets\nbsp-imgs\img5x5-orig.png" alt="5x5 Generated Images" class=" " />
