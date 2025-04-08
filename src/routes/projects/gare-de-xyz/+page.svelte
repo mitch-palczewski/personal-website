@@ -1,14 +1,22 @@
 <script lang="ts">
+	const imageCount = 3;
 	import { onMount } from 'svelte';
-	type ImageModule = { default: string};
-	let imageUrl = '';
-	onMount(() => {
-		const images = import.meta.glob('$lib/image-collections/gare-de-xyz-sketches/*.{jpg,png}', { eager: true}) as Record<string, ImageModule>;
-		const imageArray = Object.values(images).map((module)=>module.default);
-		const randomIndex = Math.floor(Math.random() * imageArray.length);
-		imageUrl = imageArray[randomIndex]
-	});
+	type ImageModule = { default: string };
+	let imageURLs: string[] = [];
+	let selectedImgs: string[] = [];
 
+	function randomizeImages() {
+		if (imageURLs.length === 0) return;
+		const shuffledURLs = [...imageURLs].sort(() => Math.random() - 0.5);
+		selectedImgs = shuffledURLs.slice(0, imageCount);
+	}
+	onMount(() => {
+		const images = import.meta.glob('$lib/image-collections/gare-de-xyz-sketches/*.{jpg,png}', {
+			eager: true
+		}) as Record<string, ImageModule>;
+		imageURLs = Object.values(images).map((module) => module.default);
+		randomizeImages();
+	});
 </script>
 
 <!--TITLE-->
@@ -98,7 +106,7 @@
 	/>
 </div>
 
-<div class="bg-blue-500 p-5 sm:px-5 md:px-20 lg:px-75">
+<div class="bg-blue-500 p-5 sm:px-5 md:px-20 lg:px-50">
 	<div class="bg-orange-100 p-2 sm:p-3 md:p-5">
 		<p class="p-2 sm:p-3">
 			While backpacking through Europe, I made a mission of capturing my travels through photos,
@@ -153,24 +161,33 @@
 </div>
 
 <!-- Random Images-->
-{#if imageUrl}
-  <img src={imageUrl} alt="A randomly selected sketch from Gare De XYZ" class="max-w-full h-auto rounded shadow-lg" />
-{/if}
 
- <!--
-<div class="min-h-screen bg-blue-500 bg-cover bg-top p-5">
-	<a href="\projects\gare-de-xyz\sketchbook" target="_blank" rel="noopener" class="group block">
-		<div class="grid grid-cols-3 gap-1 bg-blue-500 p-5">
-			{#each random_img_set1 as img}
-				<img src={img} alt="" class="shadow-lg" />
+{#if selectedImgs.length}
+	<button on:click={randomizeImages} class="group block bg-blue-500">
+		<div class="grid grid-cols-1 gap-2 bg-blue-500 p-5 md:grid-cols-3">
+			{#each selectedImgs as imageUrl}
+				<div class="overflow-hidden">
+					<img src={imageUrl} alt="" class="h-auto w-full object-cover" loading="lazy" />
+				</div>
 			{/each}
 		</div>
-		<h1 class="text-center text-3xl transition-colors duration-300 group-hover:bg-orange-300">
+		<h1
+			class="mx-5 py-3 bg-blue-900 text-center text-3xl font-bold text-white transition-colors group-hover:bg-orange-300 group-hover:text-black group-hover:underline"
+		>
+			Randomize Sketchbook
+		</h1>
+	</button>
+{/if}
+<div class="bg-blue-500 p-5">
+	<a href="\projects\gare-de-xyz\sketchbook" target="_blank" rel="noopener" >
+		<h1
+			class="bg-blue-900 py-3 text-center text-3xl font-bold text-white transition-colors hover:bg-orange-300 hover:text-black hover:underline"
+		>
 			View Entire Sketchbook
 		</h1>
 	</a>
 </div>
--->
+
 <div class="grid grid-cols-1 gap-1 bg-blue-500 p-5 pt-5 sm:grid-cols-1 md:grid-cols-3">
 	<img
 		src="\project-assets\gare-de-xyz-imgs\Bull.png"
