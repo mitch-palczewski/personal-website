@@ -1,16 +1,26 @@
 <script lang="ts">
-	const images = Object.keys(
-		import.meta.glob('/src/lib/image-collections/nbsp-images/*.{jpg,png}')
-	);
-	const get_random_images = (count: number): string[] => {
-		const shuffled = images.sort(() => 0.5 - Math.random());
-		return shuffled.slice(0, count);
-	};
-	const random_img_set1 = get_random_images(40);
+	const imageCount = 40;
+	import { onMount } from 'svelte';
+	type ImageModule = { default: string };
+	let imageURLs: string[] = [];
+	let selectedImgs: string[] = [];
+
+	function randomizeImages() {
+		if (imageURLs.length === 0) return;
+		const shuffledURLs = [...imageURLs].sort(() => Math.random() - 0.5);
+		selectedImgs = shuffledURLs.slice(0, imageCount);
+	}
+	onMount(() => {
+		const images = import.meta.glob('$lib/image-collections/nbsp-images/*.{jpg,png}', {
+			eager: true
+		}) as Record<string, ImageModule>;
+		imageURLs = Object.values(images).map((module) => module.default);
+		randomizeImages();
+	});
 </script>
 
-<div class="grid grid-cols-10 gap-1 bg-blue-500 p-5">
-	{#each random_img_set1 as img}
+<div class="grid grid-cols-5 lg:grid-cols-10 gap-1 bg-blue-500 p-5">
+	{#each selectedImgs as img}
 		<img src={img} alt="" class="shadow-lg" />
 	{/each}
 </div>
