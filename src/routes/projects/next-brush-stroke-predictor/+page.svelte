@@ -4,11 +4,13 @@
 	type ImageModule = { default: string };
 	let imageURLs: string[] = [];
 	let selectedImgs: string[] = [];
+	let selectedImgs2: string[] = [];
 
 	function randomizeImages() {
 		if (imageURLs.length === 0) return;
 		const shuffledURLs = [...imageURLs].sort(() => Math.random() - 0.5);
 		selectedImgs = shuffledURLs.slice(0, imageCount);
+		selectedImgs2 = shuffledURLs.slice(imageCount, imageCount * 2);
 	}
 	onMount(() => {
 		const images = import.meta.glob('$lib/image-collections/nbsp-images/*.{jpg,png}', {
@@ -18,14 +20,25 @@
 		randomizeImages();
 	});
 </script>
+<h1 class="my-8 text-center text-3xl md:text-5xl lg:text-8xl font-bold">Next Brush Stroke Predictor</h1>
 
-<div class="grid grid-cols-5 lg:grid-cols-10 gap-1 bg-blue-500 p-5">
+<div class="grid grid-cols-5 gap-1 bg-blue-500 p-5 lg:grid-cols-10">
 	{#each selectedImgs as img}
-		<img src={img} alt="" class="shadow-lg" />
+		<img src={img} alt="" class="shadow-lg" style="image-rendering: pixelated;" />
 	{/each}
 </div>
 
-<h1 class="mb-8 text-center text-3xl font-bold">Next Brush Stroke Predictor</h1>
+
+
+<div class="m-8">
+	<a href="\projects\next-brush-stroke-predictor\dataset" target="_blank" rel="noopener">
+		<h1
+			class="bg-blue-900 py-6 text-center text-3xl font-bold text-white transition-colors hover:bg-orange-300 hover:text-black hover:underline"
+		>
+			View All Dataset Images
+		</h1></a
+	>
+</div>
 <!-- Images Grid -->
 <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
 	<!-- G1 -->
@@ -104,7 +117,7 @@
 		</h5>
 		<h5>
 			Github: <a
-				href="https://github.com/mitchp819/next_brush_stroke_predictor_app"
+				href="https://github.com/mitch-palczewski/next_brush_stroke_predictor_app"
 				class="pl-2 font-medium text-blue-600 hover:underline dark:text-blue-500"
 				>Git_Hub_NBSP0.1.2</a
 			>
@@ -114,7 +127,7 @@
 		<hr class="my-1 border-t-2 border-gray-400" />
 		<h5>
 			Github: <a
-				href="https://github.com/mitchp819/next_brush_stroke_predictor_app_0.2"
+				href="https://github.com/mitch-palczewski/next_brush_stroke_predictor_app_0.2"
 				class="pl-2 font-medium text-blue-600 hover:underline dark:text-blue-500">Git_Hub_NBSP0.2</a
 			>
 		</h5>
@@ -128,6 +141,7 @@
 		<img src="\project-assets\nbsp-imgs\img5x5-orig.png" alt="5x5 Generated Images" class=" " />
 		<h4 class="mb-8 text-center text-3xl font-bold">Database: Origins</h4>
 	</div>
+
 	<!-- G4 -->
 	<div>
 		<div class="aspect-w-16 aspect-h-8 mx-auto mb-3 h-80 w-full">
@@ -177,9 +191,16 @@
 	</div>
 </div>
 
+
+
+<div class="grid grid-cols-5 gap-1 bg-blue-500 p-5 lg:grid-cols-10">
+	{#each selectedImgs2 as img}
+		<img src={img} alt="" class="shadow-lg" style="image-rendering: pixelated;" />
+	{/each}
+</div>
+
 <img
 	src="\project-assets\nbsp-imgs\model_method_example.png"
 	alt="Model Method Example"
-	class="mx-auto pt-8"
+	class="mx-auto"
 />
-<h4 class="pb-8 text-center text-xl font-bold">Experimental Algorithm Design</h4>
