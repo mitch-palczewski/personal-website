@@ -1,6 +1,7 @@
 <script lang="ts">
 	const imageCount = 40;
 	import { onMount } from 'svelte';
+	import Nav from '$lib/components/header.svelte';
 	type ImageModule = { default: string };
 	let imageURLs: string[] = [];
 	let selectedImgs: string[] = [];
@@ -20,6 +21,7 @@
 		randomizeImages();
 	});
 </script>
+<Nav></Nav>
 <h1 class="my-8 text-center text-3xl md:text-5xl lg:text-8xl font-bold">Next Brush Stroke Predictor</h1>
 
 <div class="grid grid-cols-5 gap-1 bg-blue-500 p-5 lg:grid-cols-10">

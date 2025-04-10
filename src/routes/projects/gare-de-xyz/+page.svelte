@@ -1,5 +1,6 @@
 <script lang="ts">
 	const imageCount = 3;
+	import Nav from '$lib/components/header.svelte';
 	import { onMount } from 'svelte';
 	type ImageModule = { default: string };
 	let imageURLs: string[] = [];
@@ -18,7 +19,7 @@
 		randomizeImages();
 	});
 </script>
-
+<Nav></Nav>
 <!--TITLE-->
 <div
 	class="min-h-screen bg-blue-500 bg-cover bg-top p-5"
