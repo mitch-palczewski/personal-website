@@ -2,16 +2,20 @@
     export let color = '#fff0d4';
     export let width = '200px';
     export let height = '150px';
-    export let bottom = '30%';
-    export let left = '4%';
+	export let top = '';
+    export let bottom = '';
+    export let left = '';
+	export let right = '';
     export let h_time = '0s';
     export let h_dist = '0px';
     export let v_time = '0s';
     export let v_dist = '0px';
+	export let z_index = '1';
     export let image = null;
 
     $: movement = determineMovement();
     $: computedClass = movement === 'both' ? 'diagonal-move' : movement === 'horizontal' ? 'h-move' : movement === 'vertical' ? 'v-move' : '';
+
 
     function determineMovement() {
         if ((v_time === '0s' || v_dist === '0px') && (h_time === '0s' || h_dist === '0px')) {
@@ -28,15 +32,18 @@
 
 <div
     class="absolute {computedClass}"
-    style="bottom: {bottom}; left: {left}; 
-        --h-time: {h_time}; --h-dist: {h_dist}; 
-        --v-time: {v_time}; --v-dist: {v_dist}; 
-        width: {width}; height: {height};"
+    style=
+		"bottom: 	{bottom};	top: 		{top};
+		left: 		{left};  	right: 		{right};
+        --h-time: 	{h_time}; 	--h-dist: 	{h_dist}; 
+        --v-time: 	{v_time}; 	--v-dist: 	{v_dist}; 
+        width: 		{width}; 	height: 	{height};
+		z-index: 	{z_index};"
 >
     {#if image}
-        <img src={image} alt="Animated Element" style="width: 100%; height: 100%; object-fit: cover;" />
+        <img src={image} alt="Animated Element" style="width: 100%; height: 100%; object-fit: cover; z-index: {z_index};" />
     {:else}
-        <div style="background-color: {color}; width: 100%; height: 100%;"></div>
+        <div style="background-color: {color}; width: 100%; height: 100%; z-index: {z_index};"></div>
     {/if}
 </div>
 
