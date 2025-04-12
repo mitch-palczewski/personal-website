@@ -1,8 +1,9 @@
 <script>
     // List of links
     const links = [
-        '/projects/painting-series-11-24/p1',
-        '/projects/painting-series-11-24/p2'
+        '/projects/painting-series-11-24/p1'
+        ,'/projects/painting-series-11-24/p2'
+        ,'/projects/painting-series-11-24/p3'
     ];
 
     // Function to navigate to a random link

@@ -1,6 +1,3 @@
-<script>
-	import AnimatedElement from '$lib/components/animated_element.svelte';
-</script>
 
 <div class="bg-[#8aa8b0]">
 	<img
