@@ -1,5 +1,6 @@
 <script>
 	import AnimatedElement from '$lib/components/animated_element.svelte';
+	import AppearingLink from '$lib/components/appearing_link.svelte';
 </script>
 
 <div
@@ -25,4 +26,5 @@
 		h_dist="70px"
 		z_index="1"
 	/>
+	<AppearingLink seconds={30} text="next" link="\projects\painting-series-11-24\p4" />
 </div>
