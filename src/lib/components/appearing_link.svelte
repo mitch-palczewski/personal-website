@@ -16,7 +16,7 @@
 {#if showLink}
     <a
         href={link}
-        class="fixed bottom-10 right-10 rounded px-1 py-1 font-bold transition hover:bg-blue-400 {textColor} text-4xl"
+        class="fixed bottom-10 right-10 rounded px-1 py-1 font-bold transition hover:bg-blue-400 {textColor} text-2xl"
         style="z-index: 10;"
     >
         {text}
