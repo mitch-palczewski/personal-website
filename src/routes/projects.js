@@ -26,5 +26,13 @@ export const projects = [
 		description: 'A Selection of Artworks',
 		date: '2024',
 		htmlContent: ''
+	},
+	{
+		name: 'Sim City Architecture',
+		link: '/projects/sim-city-arch',
+		image: '/project-assets/sim-city/flowers2.png',
+		description: 'Experimental Architecture using the Sim City 3000 Unlimited Building Architect',
+		date: '2024',
+		htmlContent: ''
 	}
 ];
