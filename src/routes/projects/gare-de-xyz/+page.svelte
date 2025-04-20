@@ -1,5 +1,5 @@
 <script lang="ts">
-	const imageCount = 3;
+	const imageCount = 6;
 	import Nav from '$lib/components/header.svelte';
 	import { onMount } from 'svelte';
 	type ImageModule = { default: string };

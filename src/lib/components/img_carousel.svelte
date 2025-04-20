@@ -20,16 +20,15 @@
 </script>
 
 <div class="relative w-full overflow-hidden">
-	<div class="relative flex h-64 items-center justify-center bg-[#404545] md:h-96">
-		{#each images as image, index}
-			<img
-				src={image}
-				alt={`Carousel slide ${index + 1}`}
-				class="absolute max-h-full max-w-full object-contain transition-opacity duration-500"
-				class:opacity-100={index === activeIndex}
-				class:opacity-0={index !== activeIndex}
-			/>
-		{/each}
-
-	</div>
+    <div class="relative flex h-64 items-center justify-center bg-gradient-to-r from-[#69AFBA] to-[#C2FFC9] md:h-96">
+        {#each images as image, index}
+            <img
+                src={image}
+                alt={`Carousel slide ${index + 1}`}
+                class="absolute max-h-full max-w-full object-contain transition-opacity duration-500"
+                class:opacity-100={index === activeIndex}
+                class:opacity-0={index !== activeIndex}
+            />
+        {/each}
+    </div>
 </div>
