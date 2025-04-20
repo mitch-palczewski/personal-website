@@ -30,7 +30,7 @@ export const projects = [
 	{
 		name: 'Sim City Architecture',
 		link: '/projects/sim-city-arch',
-		image: '/project-assets/sim-city/flowers2.png',
+		image: '/project-assets/sim-city/finals/beach3x3.jpg',
 		description: 'Experimental Architecture using the Sim City 3000 Unlimited Building Architect',
 		date: '2024',
 		htmlContent: ''

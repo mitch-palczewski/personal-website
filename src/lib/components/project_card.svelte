@@ -11,7 +11,7 @@
 <div
     class="card m-8 max-w-md border border-gray-300 p-4 text-center shadow-md {bg_color} transition-colors duration-300 hover:bg-orange-100"
 >
-    <a href={link} target="_blank" rel="noopener" class="block">
+    <a href={link}  rel="noopener" class="block">
         <h2 class="text-right">{date}</h2>
         <img src={imageUrl} alt={title} class="card-image w-full h-48 object-contain" />
         <div class="card-content">
