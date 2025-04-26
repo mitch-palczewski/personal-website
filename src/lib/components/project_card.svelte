@@ -23,7 +23,7 @@
 
 				<!--LEFT CONTENT-->
 				<div
-					class=" mr-100 border-7
+					class=" md:mr-50 lg:mr-100 border-7
                     border-[#C5795E] bg-[#FEF6FC] p-5
                     transition-colors duration-300
                     group-hover:border-transparent group-hover:bg-transparent"
