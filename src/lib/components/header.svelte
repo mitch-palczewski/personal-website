@@ -5,6 +5,7 @@
         { name: 'Gare De XYZ', href: '/projects/gare-de-xyz' },
         { name: 'Painting Series 11-24', href: '/projects/painting-series-11-24' },
         { name: 'Sim City Architecture', href: '/projects/sim-city-arch' },
+        { name: 'Simplify', href: '/projects/simplify' },
 
         //Other
         { name: 'itch.io games', href: 'https://mitchpalczewski.itch.io/' }

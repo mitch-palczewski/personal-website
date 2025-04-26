@@ -99,3 +99,12 @@
 		autoInterval={5}
 	/>
 </div>
+<div class="aspect-w-16 aspect-h-8 p-10" style="height: 700px;">
+	<iframe
+		class="h-full w-full"
+		src="https://youtube.com/embed/a8JT1gCinL4"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		allowfullscreen
+		title="Sim City Build Demo"
+	></iframe>
+</div>

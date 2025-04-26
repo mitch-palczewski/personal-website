@@ -34,5 +34,13 @@ export const projects = [
 		description: 'Experimental Architecture using the Sim City 3000 Unlimited Building Architect',
 		date: '2024',
 		htmlContent: ''
+	},
+	{
+		name: 'Simplify',
+		link: '/projects/simplify',
+		image: '/project-assets/simplify/TRAIN.png',
+		description: 'A puzzle game to exercise the artists perceptual abilities.',
+		date: '2023',
+		htmlContent: ''
 	}
 ];
