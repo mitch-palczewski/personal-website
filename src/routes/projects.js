@@ -18,7 +18,7 @@ export const projects = [
 		htmlContent:
 			'<a href="http://hyperrhiz.io/hyperrhiz27/assemblages/11-palczewski.html" target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Hyperrhiz Publication</a>'
 	},
-	
+
 	{
 		name: 'Painting Series 11-24',
 		link: '/projects/painting-series-11-24',
@@ -33,6 +33,15 @@ export const projects = [
 		image: '/project-assets/sim-city/finals/beach3x3.jpg',
 		description: 'Experimental Architecture using the Sim City 3000 Unlimited Building Architect',
 		date: '2024',
+		htmlContent: ''
+	},
+	{
+		name: 'Simplify',
+		link: '/projects/simplify',
+		image: '/project-assets/simplify/TRAIN.png',
+		description:
+			'Simplification is a powerful tool, but it is not necessarily intuitive. The objective of the game is to see as an artist and exercise your perceptual ability.',
+		date: '2023',
 		htmlContent: ''
 	}
 ];

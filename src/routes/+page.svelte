@@ -16,7 +16,6 @@
 			imageUrl={image}
 			{link}
 			{date}
-			bg_color="bg-blue-50"
 			{htmlContent}
 		/>
 	{/each}
