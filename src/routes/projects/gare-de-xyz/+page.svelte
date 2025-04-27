@@ -208,4 +208,28 @@
 		class="h-auto w-full bg-orange-100 shadow-md"
 		loading="lazy"
 	/>
+	<div class="bg-[#ffedd4] p-2 flex items-center justify-center h-full">
+		<img
+			src="\project-assets\gare-de-xyz-imgs\buildings.jpg"
+			alt="Sketch"
+			class="h-auto w-full "
+			loading="lazy"
+		/>
+	</div>
+	<div class="bg-[#ffedd4] p-2 flex items-center justify-center h-full">
+		<img
+			src="\project-assets\gare-de-xyz-imgs\road.jpg"
+			alt="Sketch"
+			class="h-auto w-full"
+			loading="lazy"
+		/>
+	</div>
+	<div class="bg-[#ffedd4] p-2 flex items-center justify-center h-full">
+		<img
+			src="\project-assets\gare-de-xyz-imgs\cafe.jpg"
+			alt="Sketch"
+			class="h-auto w-full "
+			loading="lazy"
+		/>
+	</div>
 </div>
