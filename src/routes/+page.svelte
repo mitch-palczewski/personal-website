@@ -1,22 +1,40 @@
 <script>
 	import Nav from '../lib/components/header.svelte';
 	import Card from '../lib/components/project_card.svelte';
+	import PostCard from '../lib/components/post_card.svelte';
 	export let data;
+	const posts = Object.entries(data.jsonData)
+		.map(([id, post]) => ({ id, ...post }))
+		.reverse()
+		.slice(0, 20);
 </script>
 
 <Nav></Nav>
+
 <div
 	class="min-h-screen bg-cover bg-top p-5"
 	style="background-image: url('/main-assets/wavefunctionmountains.png')"
 >
-	{#each data.summaries as { name, image, description, link, htmlContent, date }}
-		<Card
-			title={name}
-			{description}
-			imageUrl={image}
-			{link}
-			{date}
-			{htmlContent}
-		/>
-	{/each}
+	<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+		<div>
+			<h1 class="text-[#ba4a96] bg-[#82bb92] p-1 m-3">Projects Collections Series</h1>
+			{#each data.summaries as { name, image, description, link, htmlContent, date }}
+				<Card title={name} {description} imageUrl={image} {link} {date} {htmlContent} />
+			{/each}
+		</div>
+		<div>
+			<h1 class="text-[#ba4a96] bg-[#82bb92] p-1 m-3 ">Posts</h1>
+			{#each posts as post (post.id)}
+				<PostCard
+					title={post.title}
+					date={post.date}
+					media_link={post.media_link}
+					caption={post.caption}
+					base_link={post.base_link}
+				/>
+			{/each}
+		</div>
+	</div>
 </div>
+
+<pre>{JSON.stringify(data.jsonData, null, 2)}</pre>

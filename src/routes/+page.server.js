@@ -1,7 +1,14 @@
 import { projects } from './projects.js';
 
-export function load() {
+export async function load() {
+	const res = await fetch("https://mitch-palczewski.github.io/posts.json");
+	if (!res.ok) {
+		throw new Error(`Failed to load JSON: ${res.status}`);
+	}
+	 const jsonData = await res.json();
+
 	return {
+		jsonData,
 		summaries: projects.map((project) => ({
 			name: project.name,
 			image: project.image,
