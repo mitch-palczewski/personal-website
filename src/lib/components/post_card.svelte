@@ -5,7 +5,7 @@
 	export let caption;
 	export let base_link;
 </script>
-<div class="card bg-gray-200 rounded-lg shadow-lg p-6 flex flex-col items-center space-y-4 mb-16 border-3 border-black">
+<div class="card bg-gray-200 rounded-lg shadow-lg p-2 flex flex-col items-center space-y-4 mb-16 border-3 border-black">
     <h2 class="text-xl font-semibold text-gray-800">{title}</h2>
     <p class="text-sm text-gray-500">{date}</p>
     <img src={media_link} alt={title} class="w-full h-auto object-cover rounded-md" />

@@ -15,14 +15,14 @@
 	class="min-h-screen bg-cover bg-top p-5"
 	style="background-image: url('/main-assets/wavefunctionmountains.png')"
 >
-	<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-		<div>
+	<div class="grid grid-cols-1 gap-6 md:grid-cols-5">
+		<div class="col-span-3">
 			<h1 class="text-[#ba4a96] bg-[#82bb92] p-1 m-3">Projects Collections Series</h1>
 			{#each data.summaries as { name, image, description, link, htmlContent, date }}
 				<Card title={name} {description} imageUrl={image} {link} {date} {htmlContent} />
 			{/each}
 		</div>
-		<div>
+		<div class="col-span-2">
 			<h1 class="text-[#ba4a96] bg-[#82bb92] p-1 m-3 ">Posts</h1>
 			{#each posts as post (post.id)}
 				<PostCard
