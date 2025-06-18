@@ -12,10 +12,10 @@
         m-8 h-auto w-auto border-2 border-[#E3D373]
         bg-transparent text-center transition-colors duration-300
         hover:border-2 hover:border-[#CCB8B2]
-        hover:bg-gradient-to-r hover:from-[#226670] hover:to-[#144B53] hover:shadow-2xl hover:shadow-[#342C63] md:w-170 lg:w-230"
+        hover:bg-gradient-to-r hover:from-black hover:via-gray-800 hover:to-blue-200 hover:shadow-2xl hover:shadow-[#342C63] md:w-170 lg:w-190"
 >
 	<div class="border-5 border-transparent hover:border-[#CCB8B2]">
-		<div class="border-5 border-transparent hover:border-[#226670]">
+		<div class="border-5 border-transparent hover:border-blue-200">
 			<a href={link} rel="noopener" class="block">
                 
 				<!--RIGHT CONTENT-->
@@ -23,8 +23,8 @@
 
 				<!--LEFT CONTENT-->
 				<div
-					class=" md:mr-50 lg:mr-100 border-7
-                    border-[#C5795E] bg-[#FEF6FC] p-5
+					class=" md:mr-50 lg:mr-80 border-7
+                    border-[#82bb92] bg-[#FEF6FC] p-5
                     transition-colors duration-300
                     group-hover:border-transparent group-hover:bg-transparent"
 				>

@@ -12,18 +12,18 @@
 <Nav></Nav>
 
 <div
-	class="min-h-screen bg-cover bg-top p-5"
-	style="background-image: url('/main-assets/wavefunctionmountains.png')"
+	class="min-h-screen  bg-top p-5 bg-cover bg-green-200"
+	style="background-image: url('/main-assets/asdasd.png')"
 >
-	<div class="grid grid-cols-1 gap-6 md:grid-cols-5">
-		<div class="col-span-3">
-			<h1 class="text-[#ba4a96] bg-[#82bb92] p-1 m-3">Projects Collections Series</h1>
+	<div class="grid grid-cols-1 gap-6 md:grid-cols-6">
+		<div class="col-span-4">
+			<h1 class="text-[white] font-bold bg-[#82bb92] p-1 m-3">Projects Collections Series</h1>
 			{#each data.summaries as { name, image, description, link, htmlContent, date }}
 				<Card title={name} {description} imageUrl={image} {link} {date} {htmlContent} />
 			{/each}
 		</div>
 		<div class="col-span-2">
-			<h1 class="text-[#ba4a96] bg-[#82bb92] p-1 m-3 ">Posts</h1>
+			<h1 class="text-[white] font-bold bg-[#82bb92] rounded p-1 m-3 ">Posts</h1>
 			{#each posts as post (post.id)}
 				<PostCard
 					title={post.title}
@@ -37,4 +37,3 @@
 	</div>
 </div>
 
-<pre>{JSON.stringify(data.jsonData, null, 2)}</pre>
