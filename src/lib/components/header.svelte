@@ -14,12 +14,11 @@
     const selectedLinks = links.sort(() => 0.5 - Math.random()).slice(0, 3);
 </script>
 
-<nav class="bg-blue-500 px-5 flex items-center space-x-4">
-    <a href="/" class=" hover:text-white">Mitchell Palczewski</a>
-    <a href="/" class=" hover:text-white">Home</a>
+<nav class="bg-black px-5 p-[3px] flex items-center space-x-4">
+    <a href="/" class="text-gray-500 hover:text-yellow-500">Mitchell Palczewski</a>
+    <a href="/" class="text-gray-500 hover:text-yellow-500">Home</a>
     <div class="ml-auto flex justify-end space-x-4">
-        {#each selectedLinks as link}
-            <a href={link.href} class=" hover:text-white">{link.name}</a>
-        {/each}
+        <a href="/piepost" class="text-gray-500 hover:text-yellow-500">PiePost</a>
+        <a href="https://mitchpalczewski.itch.io/" class="text-gray-500 hover:text-yellow-500">itch.io games</a>
     </div>
 </nav>

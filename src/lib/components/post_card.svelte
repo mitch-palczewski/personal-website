@@ -5,10 +5,22 @@
 	export let caption;
 	export let base_link;
 </script>
-<div class="card bg-gray-200 rounded-lg shadow-lg p-2 flex flex-col items-center space-y-4 mb-16 border-3 border-[#ba4a96]">
-    <h2 class="text-xl font-semibold text-gray-800">{title}</h2>
-    <p class="text-sm text-gray-500">{date}</p>
-    <img src={media_link} alt={title} class="w-full h-auto object-cover" />
-    <p class="text-gray-700">{caption}</p>
-    <a href={base_link} class="mt-2 inline-block px-4 py-2 bg-blue-300 text-white rounded hover:bg-blue-400 transition">Visit My Scrapbook</a>
+
+<div
+	class="card mb-5 flex flex-col items-center border-3 border-gray-700 bg-gray-200 p-2 shadow-lg"
+>
+	<h2 class="text-xl font-semibold text-gray-800">{title}</h2>
+	<p class="text-sm text-gray-500">{date}</p>
+	<img src={media_link} alt={title} class="h-auto w-full object-cover border-3 border-gray-700" />
+    {#if caption !== ""}
+        <div class="bg-white p-1 my-1 border-1 border-black">
+            <p class="text-gray-700">{caption}</p>
+        </div>
+    {/if}
+
+	<a
+		href={base_link}
+		class="mt-2 inline-block rounded bg-blue-300 px-4 py-2 text-white transition hover:bg-blue-400"
+		>Visit My Scrapbook</a
+	>
 </div>

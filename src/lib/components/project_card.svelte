@@ -9,17 +9,17 @@
 
 <div
 	class="card group
-        m-8 h-auto w-auto border-2 border-[#E3D373]
+        my-8 h-auto w-auto border-2 border-[#E3D373]
         bg-transparent text-center transition-colors duration-300
         hover:border-2 hover:border-[#CCB8B2]
-        hover:bg-gradient-to-r hover:from-black hover:via-gray-800 hover:to-blue-200 hover:shadow-2xl hover:shadow-[#342C63] md:w-170 lg:w-190"
+        hover:bg-gradient-to-r hover:from-black hover:via-gray-800 hover:to-blue-200 hover:shadow-2xl hover:shadow-[#244a4d] md:w-170 lg:w-auto"
 >
 	<div class="border-5 border-transparent hover:border-[#CCB8B2]">
 		<div class="border-5 border-transparent hover:border-blue-200">
 			<a href={link} rel="noopener" class="block">
                 
 				<!--RIGHT CONTENT-->
-				<h2 class="p-1 pr-3 text-right text-blue-900 group-hover:text-blue-100">{date}</h2>
+				<h2 class="p-1 pr-3 text-right text-blue-900 group-hover:text-blue-900 group-hover:font-bold">{date}</h2>
 
 				<!--LEFT CONTENT-->
 				<div
