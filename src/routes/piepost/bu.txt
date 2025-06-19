@@ -1,0 +1,135 @@
+<script>
+	import { error } from '@sveltejs/kit';
+	import { onMount } from 'svelte';
+
+	let newLink = '';
+	/**
+	 * @type {any[]}
+	 */
+	let links = [];
+	/**
+	 * @type {any[]}
+	 */
+	let linksData = [];
+
+	onMount(async () => {
+		links = JSON.parse(localStorage.getItem('links') || '[]');
+        
+		for (const urlObj of links) {
+			try {
+                console.log(`Fetching ${urlObj.url}:`)
+				const res = await fetch(urlObj.url);
+                console.log(res)
+				if (!res.ok) {
+					console.error(`Failed to fetch ${urlObj.url}: ${res.status}`);
+					continue;
+				}
+				const data = await res.json();
+                console.log(data)
+				linksData = [...linksData, data];
+			} catch {
+				console.error(`Error fetching ${urlObj.url}:`);
+			}
+            console.log(linksData)
+		}
+	});
+
+	const saveToStorage = () => {
+		localStorage.setItem('links', JSON.stringify(links));
+	};
+
+	const addLink = () => {
+		const trimmed = newLink.trim();
+		if (!trimmed) return;
+		links = [...links, { url: trimmed, editing: false }];
+		newLink = '';
+		saveToStorage();
+	};
+
+	const editLink = (/** @type {number} */ index) => {
+		links = links.map((link, i) => (i === index ? { ...link, editing: true } : link));
+	};
+
+	const updateLink = (/** @type {number} */ index, /** @type {string} */ newUrl) => {
+		const trimmed = newUrl.trim();
+		if (!trimmed) return;
+		links = links.map((link, i) => (i === index ? { url: trimmed, editing: false } : link));
+		saveToStorage();
+	};
+
+	const cancelEdit = (/** @type {number} */ index) => {
+		links = links.map((link, i) => (i === index ? { ...link, editing: false } : link));
+	};
+
+	const deleteLink = (/** @type {number} */ index) => {
+		links = links.filter((_, i) => i !== index);
+		saveToStorage();
+	};
+</script>
+
+<div class="mx-auto max-w-2xl p-4">
+	<h1 class="mb-4 text-2xl font-bold">PiePost Link Manager</h1>
+	<div class="mb-4 flex gap-2">
+		<input
+			type="text"
+			placeholder="Enter link URL"
+			bind:value={newLink}
+			class="flex-1 border p-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+		/>
+		<button on:click={addLink} class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+			Follow
+		</button>
+	</div>
+
+	<!-- List of links -->
+	<ul class="space-y-3">
+		{#each links as link, index}
+			<li class="flex items-center space-x-2">
+				{#if link.editing}
+					<!-- Editable link input -->
+					<input
+						type="text"
+						bind:value={link.url}
+						class="flex-1 border p-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+					/>
+					<button
+						on:click={() => updateLink(index, link.url)}
+						class="rounded bg-green-500 px-3 py-1 text-white hover:bg-green-600"
+					>
+						Save
+					</button>
+					<button
+						on:click={() => cancelEdit(index)}
+						class="rounded bg-gray-500 px-3 py-1 text-white hover:bg-gray-600"
+					>
+						Cancel
+					</button>
+				{:else}
+					<span class="flex-1 break-all">{link.url}</span>
+					<button
+						on:click={() => editLink(index)}
+						class="rounded bg-yellow-500 px-3 py-1 text-white hover:bg-yellow-600"
+					>
+						Edit
+					</button>
+					<button
+						on:click={() => deleteLink(index)}
+						class="rounded bg-red-500 px-3 py-1 text-white hover:bg-red-600"
+					>
+						Delete
+					</button>
+				{/if}
+			</li>
+		{/each}
+	</ul>
+</div>
+
+{#if linksData.length > 0}
+	{#each linksData as data (data.id)}
+		<article>
+			<h2>{data.title}</h2>
+		</article>
+	{/each}
+{:else}
+	<p>Loading posts...</p>
+{/if}

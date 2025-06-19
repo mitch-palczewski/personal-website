@@ -1,41 +1,21 @@
 <script>
-    import { onMount } from 'svelte';
-    let imageUrl = '';
-    /**
-	 * @type {any[]}
-	 */
-    let images = [];
-
-    function addImage() {
-        if (imageUrl) {
-            images = [...images, imageUrl];
-            imageUrl = '';
-        }
-    }
+	import LinkManager from '$lib/components/link_manager.svelte';
+	import PostCard from '$lib/components/post_card.svelte';
+	export let data;
+    const posts = data.posts
 </script>
 
-<div class="bg-gray-100 flex flex-col items-center p-8 min-h-screen">
-    <div class="max-w-md w-full bg-white p-6 rounded-lg shadow-md">
-        <label for="image-url-input" class="block text-gray-700 font-semibold mb-2">Enter Image URL:</label>
-        <input
-            id="image-url-input"
-            bind:value={imageUrl}
-            type="text"
-            class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
-            placeholder="Paste image link here"
-        />
-        <button
-            on:click={addImage}
-            class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-        >
-            Add Image
-        </button>
-    </div>
+<LinkManager></LinkManager>
 
-    <div class="mt-6 grid grid-cols-2 gap-4 w-full max-w-md">
-        {#each images as img, i}
-            <img src={img} alt={`User provided image ${i + 1}`} class="w-full h-auto rounded-lg shadow-md" />
-        {/each}
-    </div>
+<h2>Server Retrieved Cookie</h2>
+<div class="col-span-2">
+	{#each posts as post}
+		<PostCard
+			title={post.title}
+			date={post.date}
+			media_link={post.media_link}
+			caption={post.caption}
+			base_link={post.base_link}
+		/>
+	{/each}
 </div>
-
