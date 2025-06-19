@@ -18,12 +18,14 @@
 			media_link={post.media_link}
 			caption={post.caption}
 			base_link={post.base_link}
+			username={post.username}
+			profile_pic={post.profile_pic}
 		/>
 	{/each}
 </div>
 <div class="col-span-2">
 <h1 class="text-2xl font-bold mb-4">PiePost Link Manager</h1>
-<p>To follow other pie post users enter their PiePost Website Url follwed by /posts.json. <br> Example: https://username.github.io/posts.json</p>
+<p>To follow other pie post users enter their PiePost Website Url followed by /posts.json. <br> Example: https://username.github.io/posts.json</p>
 <LinkManager></LinkManager>
 </div>
 

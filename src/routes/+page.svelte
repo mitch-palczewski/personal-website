@@ -31,6 +31,8 @@
 					media_link={post.media_link}
 					caption={post.caption}
 					base_link={post.base_link}
+					username={post.username}
+					profile_pic={post.profile_pic}
 				/>
 			{/each}
 		</div>
