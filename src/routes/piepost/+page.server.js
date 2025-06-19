@@ -2,7 +2,6 @@
 export async function load({ cookies }) {
     const linksCookies = JSON.parse(cookies.get('links') || '[]');
     const postsData = await get_links_from_cookies(linksCookies);
-    console.log(postsData.postsData);
     const posts = postsData.postsData
     return { posts };
 }

@@ -5,10 +5,12 @@
     const posts = data.posts
 </script>
 
-<LinkManager></LinkManager>
+<div class="flex p-3 px-3">
+<h1 class="font-bold text-xl">PiePost Feed</h1>
+</div>
 
-<h2>Server Retrieved Cookie</h2>
-<div class="col-span-2">
+<div class="grid grid-cols-5 gap-5">
+<div class="col-span-3">
 	{#each posts as post}
 		<PostCard
 			title={post.title}
@@ -19,3 +21,14 @@
 		/>
 	{/each}
 </div>
+<div class="col-span-2">
+<h1 class="text-2xl font-bold mb-4">PiePost Link Manager</h1>
+<p>To follow other pie post users enter their PiePost Website Url follwed by /posts.json. <br> Example: https://username.github.io/posts.json</p>
+<LinkManager></LinkManager>
+</div>
+
+
+</div>
+
+
+
