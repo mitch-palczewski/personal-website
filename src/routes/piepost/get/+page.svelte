@@ -33,7 +33,6 @@
 				<h1><span class="font-bold">config</span>: folder - stores app data and prefrences</h1>
 				<h1><span class="font-bold">html_components</span>: folder - stores html snippets</h1>
 				<h1><span class="font-bold">index.html</span>: html - your webpage</h1>
-				<h1><span class="font-bold">picon.ico</span>: ico - icon for PiePost</h1>
 				<h1>
 					<span class="font-bold">PiePost.exe</span>: executable - Click on this to build your
 					webpage
@@ -51,11 +50,11 @@
 
 <div class="center">
 	<a
-		href="/downloadable/PiePost 1.0.0.zip"
-		download="PiePost 1.0.0.zip"
+		href="/downloadable/PiePost 1.0.1.zip"
+		download="PiePost 1.0.1.zip"
 		class="download-btn text-center"
 	>
-		Download PiePost 1.0.0
+		Download PiePost 1.0.1
 
 	</a>
 </div>
