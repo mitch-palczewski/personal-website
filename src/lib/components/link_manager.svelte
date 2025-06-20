@@ -46,12 +46,23 @@
 	};
 
 	const addLink = () => {
-		const trimmed = newLink.trim();
-		if (!trimmed) return;
-		links = [...links, { url: trimmed, editing: false }];
+		const trimmedLink = newLink.trim();
+		if (!trimmedLink) return;
+		const modifiedLink = modifyLink(trimmedLink)
+		links = [...links, { url: modifiedLink, editing: false }];
 		newLink = '';
 		saveToStorage();
 		location.reload();
+	};
+
+	const modifyLink = (/** @type {string} */ link) => {
+		if (link.endsWith("/posts.json")){
+			return link;
+		}
+		if (link.endsWith("/")){
+			return link.concat("posts.json")
+		}
+		return link.concat("/posts.json")
 	};
 
 	const editLink = (/** @type {number} */ index) => {

@@ -6,7 +6,6 @@ export async function load({ cookies }) {
 		return { posts };
 	} catch (error) {
 		console.error('Load error:', error);
-		// Return empty posts array instead of 500 error
 		return { posts: [] };
 	}
 }
@@ -97,9 +96,13 @@ async function getDataFromLink(link) {
 function isValidURL(str) {
 	try {
 		new URL(str);
-		return true;
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	} catch (e) {
+		return false;
+	}
+	if(str.toString().endsWith("posts.json")){
+		return true;
+	} else {
 		return false;
 	}
 }
