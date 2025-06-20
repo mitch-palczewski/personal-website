@@ -6,7 +6,7 @@ export const projects = [
 		description: 'A no/low code Website Generator that automates posting.',
 		date: '2025',
 		htmlContent:
-			'<a href="/piepost/get" target="" rel="noopener noreferrer" class="text-xl font-bold bg-white px-10 text-blue-600 hover:underline dark:text-blue-500">Get PiePost</a>'
+			'<div class="sm:flex mt-2"> <a href="/piepost/get" target="" rel="noopener noreferrer" class="text-xl border-4 border-[#82bb92] font-bold bg-white px-10 text-blue-600 hover:underline dark:text-blue-500">PiePost- Get</a> <br> <a href="/piepost/feed" target="" rel="noopener noreferrer" class="text-xl border-4 border-[#82bb92] sm:mx-3 font-bold bg-white px-10 text-blue-600 hover:underline dark:text-blue-500">PiePost- Feed</a> <br> <a href="/piepost/community" target="" rel="noopener noreferrer" class="text-xl border-4 border-[#82bb92] font-bold bg-white px-10 text-blue-600 hover:underline dark:text-blue-500">PiePost- Community</a> </div>'
 	},
 	{
 		name: 'Next Brush Stroke Predictor',

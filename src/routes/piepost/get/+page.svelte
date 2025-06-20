@@ -1,16 +1,13 @@
 <script>
 	import Nav from '$lib/components/header.svelte';
+	import PiePostHeader from '$lib/components/piepost_components/pie_post_header.svelte';
 </script>
 
 <Nav></Nav>
+<PiePostHeader title="Get PiePost" subtitle=""></PiePostHeader>
 
-<div class="grid_box mx-9 my-3 grid lg:grid-cols-5 grid-cols-1 gap-3">
-    		<img
-			style="height: 250px; display: block; margin: 0 auto;"
-			src="/project-assets/piepost/piepost12.png"
-			alt="PiePost Logo"
-		/>
-	<div class="col-span-2">
+<div class="grid_box mx-9 my-3 grid grid-cols-1 gap-3 lg:grid-cols-2">
+	<div class="">
 		<h1 class="font-bold">About PiePost</h1>
 		<p>
 			PiePost is a desktop appliction that builds you a personal website and automates the posting
@@ -24,7 +21,7 @@
 			you have the freedom to edit and delete.
 		</p>
 	</div>
-	<div class="col-span-2">
+	<div class="">
 		<ul>
 			<li>File Size: 14.5 MB</li>
 			<li>
@@ -55,7 +52,6 @@
 		class="download-btn text-center"
 	>
 		Download PiePost 1.0.1
-
 	</a>
 </div>
 
@@ -84,10 +80,18 @@
 			exactly match your username, it won’t work, so make sure to get it right. The repository must be
 			public.
 		</p>
-        <div class="flex flex-col items-center space-y-4 p-5">
-            <img src="/project-assets/piepost/tutorial/s1.png" alt="PiePost Tutorial s1" style="height: 400px; object-fit: contain;" />
-            <img src="/project-assets/piepost/tutorial/s2.png" alt="PiePost Tutorial s2" style="height: 600px; object-fit: contain;" />
-        </div>
+		<div class="flex flex-col items-center space-y-4 p-5">
+			<img
+				src="/project-assets/piepost/tutorial/s1.png"
+				alt="PiePost Tutorial s1"
+				style="height: 400px; object-fit: contain;"
+			/>
+			<img
+				src="/project-assets/piepost/tutorial/s2.png"
+				alt="PiePost Tutorial s2"
+				style="height: 600px; object-fit: contain;"
+			/>
+		</div>
 		<br />
 		<h1 class="font-bold">Step 2 Cloning</h1>
 		<p>
@@ -95,19 +99,35 @@
 			username.github.io and the folder in which you wish it to live This will create a folder called
 			username.github.io
 		</p>
-        <div class="flex flex-col items-center space-y-4 p-5">
-            <img src="/project-assets/piepost/tutorial/s3.png" alt="PiePost Tutorial s3" style="height: 400px; object-fit: contain;" />
-            <img src="/project-assets/piepost/tutorial/s4.png" alt="PiePost Tutorial s4" style="height: 600px; object-fit: contain;" />
-            <img src="/project-assets/piepost/tutorial/s5.png" alt="PiePost Tutorial s5" style="height: 150px; object-fit: contain;" />
-        </div>
+		<div class="flex flex-col items-center space-y-4 p-5">
+			<img
+				src="/project-assets/piepost/tutorial/s3.png"
+				alt="PiePost Tutorial s3"
+				style="height: 400px; object-fit: contain;"
+			/>
+			<img
+				src="/project-assets/piepost/tutorial/s4.png"
+				alt="PiePost Tutorial s4"
+				style="height: 600px; object-fit: contain;"
+			/>
+			<img
+				src="/project-assets/piepost/tutorial/s5.png"
+				alt="PiePost Tutorial s5"
+				style="height: 150px; object-fit: contain;"
+			/>
+		</div>
 		<br />
 		<h1 class="font-bold">Step 3 Copy Files</h1>
 		<p>
 			Unzip and copy the contents of the PiePost folder zipfile into that folder username.github.io
 		</p>
-        <div class="flex flex-col items-center space-y-4 p-5">
-            <img src="/project-assets/piepost/tutorial/s6.png" alt="PiePost Tutorial s6" style="height: 400px; object-fit: contain;" />
-        </div>
+		<div class="flex flex-col items-center space-y-4 p-5">
+			<img
+				src="/project-assets/piepost/tutorial/s6.png"
+				alt="PiePost Tutorial s6"
+				style="height: 400px; object-fit: contain;"
+			/>
+		</div>
 		<br />
 		<h1 class="font-bold">Step 4 Configure Git</h1>
 		<p>
@@ -117,20 +137,27 @@
 			Edit the base link. <br />
 			Enter https://username.github.io/<br />
 			<br /><br />
-            
+
 			Navigate to configure website -> general configuration <br />
 			Edit the github repository link<br />
 			Enter https://github.com/username/username.github.io.git<br />
 			<br /><br />
 			(Where username is your github username)
 		</p>
-        <div class="flex flex-col items-center space-y-4 p-5">
-            <img src="/project-assets/piepost/tutorial/s7.png" alt="PiePost Tutorial s7" style="height: 500px; object-fit: contain;" />
-            <img src="/project-assets/piepost/tutorial/s8.png" alt="PiePost Tutorial s8" style="height: 500px; object-fit: contain;" />
-   
-        </div>
-        <h1 class="text-4xl font-bold p-5">You Are Ready To Start Posting</h1>
-        <p>Note: This is the easiest but not the only way to host your PiePost website. </p>
+		<div class="flex flex-col items-center space-y-4 p-5">
+			<img
+				src="/project-assets/piepost/tutorial/s7.png"
+				alt="PiePost Tutorial s7"
+				style="height: 500px; object-fit: contain;"
+			/>
+			<img
+				src="/project-assets/piepost/tutorial/s8.png"
+				alt="PiePost Tutorial s8"
+				style="height: 500px; object-fit: contain;"
+			/>
+		</div>
+		<h1 class="p-5 text-4xl font-bold">You Are Ready To Start Posting</h1>
+		<p>Note: This is the easiest but not the only way to host your PiePost website.</p>
 	</div>
 </div>
 

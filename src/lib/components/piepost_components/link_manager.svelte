@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 
 	let newLink = '';
+
 	/**
 	 * @type {any[]}
 	 */
@@ -36,7 +37,7 @@
 					links = parsed;
 				}
 			} catch (e) {
-				// Invalid cookie data, ignore
+				
 			}
 		}
 	});
@@ -90,7 +91,7 @@
 	<div class="mb-4 flex gap-2">
 		<input
 			type="text"
-			placeholder="Enter link URL"
+			placeholder="Enter PiePost website URL"
 			bind:value={newLink}
 			class="flex-1 border p-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
 		/>
@@ -99,12 +100,10 @@
 		</button>
 	</div>
 
-	<!-- List of links -->
 	<ul class="space-y-3">
 		{#each links as link, index}
 			<li class="flex items-center space-x-2">
 				{#if link.editing}
-					<!-- Editable link input -->
 					<input
 						type="text"
 						bind:value={link.url}
