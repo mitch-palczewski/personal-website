@@ -30,12 +30,13 @@
 	onMount(() => {
 		let stored = getCookie('links');
 		if (stored) {
-			links = JSON.parse(stored);
-		} else {
-			setCookie('links', 'https://mitch-palczewski.github.io/posts.json');
-			stored = getCookie('links');
-			if (stored) {
-				links = JSON.parse(stored);
+			try {
+				const parsed = JSON.parse(stored);
+				if (Array.isArray(parsed) && parsed.every(link => typeof link.url === 'string')) {
+					links = parsed;
+				}
+			} catch (e) {
+				// Invalid cookie data, ignore
 			}
 		}
 	});
