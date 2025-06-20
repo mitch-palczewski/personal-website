@@ -2,7 +2,7 @@
 	import LinkManager from '$lib/components/link_manager.svelte';
 	import PostCard from '$lib/components/post_card.svelte';
 	export let data;
-    const posts = data.posts
+	const posts = data.posts ?? [];
 </script>
 
 <div class="flex p-3 px-3">
@@ -11,6 +11,7 @@
 
 <div class="grid grid-cols-5 gap-5">
 <div class="col-span-3">
+
 	{#each posts as post}
 		<PostCard
 			title={post.title}

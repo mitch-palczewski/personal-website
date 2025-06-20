@@ -1,8 +1,13 @@
 export async function load({ cookies }) {
-	const linksCookies = JSON.parse(cookies.get('links') || '[]');
+    try{
+    const linksCookies = JSON.parse(cookies.get('links') || '[]');
 	const postsData = await get_links_from_cookies(linksCookies);
 	const posts = postsData.postsData;
 	return { posts };
+    }catch (error) {
+    console.error('Load error:', error);
+    return { status: 500, error: new Error('Internal Server Error') };
+  }
 }
 
 /**
