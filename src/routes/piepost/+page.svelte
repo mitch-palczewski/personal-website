@@ -7,7 +7,7 @@
 <PiePostHeader title="PiePost" subtitle=""></PiePostHeader>
 
 <div class="m-1 sm:m-5">
-	<div class="grid grid-cols-2 gap-1">
+	<div class="grid grid-cols-1 sm:grid-cols-2 gap-1">
 		<div>
 			<img src="/project-assets/piepost/piepostexe.png" class="w-auto" alt="Pie Post Executable" />
 		</div>

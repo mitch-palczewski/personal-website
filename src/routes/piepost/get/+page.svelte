@@ -47,15 +47,23 @@
 
 <div class="center">
 	<a
-		href="/downloadable/PiePost 1.0.1.zip"
-		download="PiePost 1.0.1.zip"
+		href="/downloadable/PiePost 1.2.0.zip"
+		download="PiePost 1.2.0.zip"
 		class="download-btn text-center"
 	>
-		Download PiePost 1.0.1
+		Windows Download PiePost 1.2.0
+	</a>
+
+	<a
+		href="/downloadable/PiePost 1.2.0-src.zip"
+		download="PiePost 1.2.0-src.zip"
+		class="download-btn text-center"
+	>
+		Source Code Download PiePost 1.2.0-src
 	</a>
 </div>
 
-<div class="center mx-9 my-3 bg-gray-200 p-3">
+<div class="center mx-1 sm:mx-9 my-3 bg-gray-200 p-1 sm:p-3">
 	<div>
 		<p>
 			To set up PiePost it takes a few steps. PiePost writes html for you but you still need to host
@@ -84,7 +92,7 @@
 			<img
 				src="/project-assets/piepost/tutorial/s1.png"
 				alt="PiePost Tutorial s1"
-				style="height: 400px; object-fit: contain;"
+				class="responsive-img"
 			/>
 			<img
 				src="/project-assets/piepost/tutorial/s2.png"
@@ -103,7 +111,7 @@
 			<img
 				src="/project-assets/piepost/tutorial/s3.png"
 				alt="PiePost Tutorial s3"
-				style="height: 400px; object-fit: contain;"
+				class="responsive-img"
 			/>
 			<img
 				src="/project-assets/piepost/tutorial/s4.png"
@@ -113,7 +121,7 @@
 			<img
 				src="/project-assets/piepost/tutorial/s5.png"
 				alt="PiePost Tutorial s5"
-				style="height: 150px; object-fit: contain;"
+				class="responsive-img"
 			/>
 		</div>
 		<br />
@@ -125,7 +133,7 @@
 			<img
 				src="/project-assets/piepost/tutorial/s6.png"
 				alt="PiePost Tutorial s6"
-				style="height: 400px; object-fit: contain;"
+				class="responsive-img"
 			/>
 		</div>
 		<br />
@@ -148,12 +156,12 @@
 			<img
 				src="/project-assets/piepost/tutorial/s7.png"
 				alt="PiePost Tutorial s7"
-				style="height: 500px; object-fit: contain;"
+				class="responsive-img"
 			/>
 			<img
 				src="/project-assets/piepost/tutorial/s8.png"
 				alt="PiePost Tutorial s8"
-				style="height: 500px; object-fit: contain;"
+				class="responsive-img"
 			/>
 		</div>
 		<h1 class="p-5 text-4xl font-bold">You Are Ready To Start Posting</h1>
