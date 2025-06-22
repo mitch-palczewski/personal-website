@@ -38,8 +38,6 @@
 					<span class="font-bold">posts.json</span>: json - stores information about your posts to
 					make availible to the internet
 				</h1>
-				<h1><span class="font-bold">script.js</span>: javascript - javascript functionality</h1>
-				<h1><span class="font-bold">styles.css</span>: css - custom css styles</h1>
 			</li>
 		</ul>
 	</div>
