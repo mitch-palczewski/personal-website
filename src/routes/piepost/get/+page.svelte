@@ -45,23 +45,27 @@
 	</div>
 </div>
 
-<div class="center">
+<div class="center p-5">
 	<a
 		href="/downloadable/PiePost 1.2.0.zip"
 		download="PiePost 1.2.0.zip"
-		class="download-btn text-center"
+		class="download-btn text-center w-2xl"
 	>
 		Windows Download PiePost 1.2.0
 	</a>
 
-	<a
-		href="/downloadable/PiePost 1.2.0-src.zip"
-		download="PiePost 1.2.0-src.zip"
-		class="download-btn text-center"
-	>
-		Source Code Download PiePost 1.2.0-src
-	</a>
+	
 </div>
+
+<div class="center p-5">
+<a
+	href="/piepost/get/more-options"
+	class="inline-block rounded bg-blue-300 px-6 py-3 font-medium text-white text-2xl transition-colors duration-200 hover:bg-blue-700 text-center w-full max-w-xl"
+>
+	More Download Options
+</a>
+</div>
+
 
 <div class="center mx-1 sm:mx-9 my-3 bg-gray-200 p-1 sm:p-3">
 	<div>
