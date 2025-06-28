@@ -1,6 +1,10 @@
 <script>
 	import Nav from '$lib/components/header.svelte';
 	import PiePostHeader from '$lib/components/piepost_components/pie_post_header.svelte';
+	import TutorialGithub from '$lib/components/piepost_components/tutorial_github.svelte';
+	import TutorialNeocities from '$lib/components/piepost_components/tutorial_neocities.svelte';
+
+	let selected = 'github';
 </script>
 
 <Nav></Nav>
@@ -47,128 +51,64 @@
 	<a
 		href="/downloadable/PiePost 1.2.0.zip"
 		download="PiePost 1.2.0.zip"
-		class="download-btn text-center w-2xl"
+		class="download-btn w-2xl text-center"
 	>
 		Windows Download PiePost 1.2.0
 	</a>
-
-	
 </div>
 
 <div class="center p-5">
-<a
-	href="/piepost/get/more-options"
-	class="inline-block rounded bg-blue-300 px-6 py-3 font-medium text-white text-2xl transition-colors duration-200 hover:bg-blue-700 text-center w-full max-w-xl"
->
-	More Download Options
-</a>
+	<a
+		href="/piepost/get/more-options"
+		class="inline-block w-full max-w-xl rounded bg-blue-300 px-6 py-3 text-center text-2xl font-medium text-white transition-colors duration-200 hover:bg-blue-700"
+	>
+		More Download Options
+	</a>
 </div>
 
+<div class="mt-3 bg-yellow-100 p-3">
+	<p>
+		To set up PiePost it takes a few steps. PiePost writes html for you but you still need to host
+		your website somewhere. There are many options for free or paid website hosting. Bellow are tutorial for hosting options. 
+	</p>
 
-<div class="center mx-1 sm:mx-9 my-3 bg-gray-200 p-1 sm:p-3">
-	<div>
-		<p>
-			To set up PiePost it takes a few steps. PiePost writes html for you but you still need to host
-			your website somewhere. There are many options for free or paid website hosting. The
-			recommended and easiest option is github pages. Bellow are steps to set this up.
-		</p>
-		<ul>
-			<h1 class="font-bold">What you need:</h1>
-			<ol>1 - PiePost Desktop Application</ol>
-			<ol>2 - Github Account</ol>
-			<ol>3 - Github Desktop Application (for ease of use)</ol>
-		</ul>
-		<p>
-			If you have not done so allready create a Github Account and download PiePost and Github
-			Desktop.
-		</p>
-		<br />
-		<h1 class="font-bold">Step 1 Create a github pages repository</h1>
-		<p>
-			Go to GitHub and create a new public repository named username.github.io, where username is
-			your username (or organization name) on GitHub. <br /> If the first part of the repository doesn’t
-			exactly match your username, it won’t work, so make sure to get it right. The repository must be
-			public.
-		</p>
-		<div class="flex flex-col items-center space-y-4 p-5">
-			<img
-				src="/project-assets/piepost/tutorial/s1.png"
-				alt="PiePost Tutorial s1"
-				class="responsive-img"
-			/>
-			<img
-				src="/project-assets/piepost/tutorial/s2.png"
-				alt="PiePost Tutorial s2"
-				style="height: 600px; object-fit: contain;"
-			/>
-		</div>
-		<br />
-		<h1 class="font-bold">Step 2 Cloning</h1>
-		<p>
-			In github desktop go to file -> clone repository. <br /> Then select the repository you just made
-			username.github.io and the folder in which you wish it to live This will create a folder called
-			username.github.io
-		</p>
-		<div class="flex flex-col items-center space-y-4 p-5">
-			<img
-				src="/project-assets/piepost/tutorial/s3.png"
-				alt="PiePost Tutorial s3"
-				class="responsive-img"
-			/>
-			<img
-				src="/project-assets/piepost/tutorial/s4.png"
-				alt="PiePost Tutorial s4"
-				style="height: 600px; object-fit: contain;"
-			/>
-			<img
-				src="/project-assets/piepost/tutorial/s5.png"
-				alt="PiePost Tutorial s5"
-				class="responsive-img"
-			/>
-		</div>
-		<br />
-		<h1 class="font-bold">Step 3 Copy Files</h1>
-		<p>
-			Unzip and copy the contents of the PiePost folder zipfile into that folder username.github.io
-		</p>
-		<div class="flex flex-col items-center space-y-4 p-5">
-			<img
-				src="/project-assets/piepost/tutorial/s6.png"
-				alt="PiePost Tutorial s6"
-				class="responsive-img"
-			/>
-		</div>
-		<br />
-		<h1 class="font-bold">Step 4 Configure Git</h1>
-		<p>
-			open PiePost.exe
-			<br /><br />
-			On the landing page <br />
-			Edit the base link. <br />
-			Enter https://username.github.io/<br />
-			<br /><br />
-
-			Navigate to configure website -> general configuration <br />
-			Edit the github repository link<br />
-			Enter https://github.com/username/username.github.io.git<br />
-			<br /><br />
-			(Where username is your github username)
-		</p>
-		<div class="flex flex-col items-center space-y-4 p-5">
-			<img
-				src="/project-assets/piepost/tutorial/s7.png"
-				alt="PiePost Tutorial s7"
-				class="responsive-img"
-			/>
-			<img
-				src="/project-assets/piepost/tutorial/s8.png"
-				alt="PiePost Tutorial s8"
-				class="responsive-img"
-			/>
-		</div>
-		<h1 class="p-5 text-4xl font-bold">You Are Ready To Start Posting</h1>
-		<p>Note: This is the easiest but not the only way to host your PiePost website.</p>
+	<div class="mb-4 flex justify-center gap-4">
+		<button
+			class="px-4 py-2 transition-colors duration-200"
+			class:selected={selected === 'github'}
+			on:click={() => (selected = 'github')}
+			style="background-color: {selected === 'github' ? '#2563eb' : '#e5e7eb'}; color: {selected ===
+			'github'
+				? '#fff'
+				: '#000'}"
+		>
+			<span class="text-xl font-bold">Github Tutorial</span>
+			<br />
+			Instillation: Hard
+			<br />
+			Posting: Fulling Automated
+		</button>
+		<button
+			class="px-4 py-2 transition-colors duration-200"
+			class:selected={selected === 'neocities'}
+			on:click={() => (selected = 'neocities')}
+			style="background-color: {selected === 'neocities'
+				? '#2563eb'
+				: '#e5e7eb'}; color: {selected === 'neocities' ? '#fff' : '#000'}"
+		>
+			<span class="text-xl font-bold">Neocities Tutorial</span>
+			<br />
+			Instillation: Easy
+			<br />
+			Posting: Manual
+		</button>
 	</div>
+
+	{#if selected === 'github'}
+		<TutorialGithub />
+	{:else if selected === 'neocities'}
+		<TutorialNeocities />
+	{/if}
 </div>
 
 <style>

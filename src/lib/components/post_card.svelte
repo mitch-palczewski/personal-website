@@ -21,7 +21,11 @@
 	</div>
 	<h2 class="text-xl font-semibold text-gray-800">{title}</h2>
 	<p class="text-sm text-gray-500">{date}</p>
-	<img src={media_link} alt={title} class="h-auto w-full border-3 border-gray-700 object-cover" />
+	<img
+		src={media_link}
+		alt={title}
+		class="h-auto w-auto max-h-[60vh] border-3 border-gray-700 object-cover"
+	/>
 	{#if caption !== ''}
 		<div class="my-1 border-1 border-black bg-white p-1">
 			<p class="text-gray-700">{caption}</p>

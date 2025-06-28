@@ -17,28 +17,28 @@
     
     <nav class="sm:ml-auto flex gap-1">
         <a
-            href="/piepost/feed"
-            class="relative sm:text-lg px-2 py-1 rounded-lg text-blue-800 font-semibold transition-all duration-200 hover:bg-blue-200 hover:shadow-lg sm:hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        >
-            PiePost-Feed
-        </a>
-        <a
             href="/piepost/get"
             class="relative sm:text-lg px-2 py-1 rounded-lg text-blue-800 font-semibold transition-all duration-200 hover:bg-blue-200 hover:shadow-lg sm:hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
-            PiePost-Get
+            Get
+        </a>
+        <a
+            href="/piepost/feed"
+            class="relative sm:text-lg px-2 py-1 rounded-lg text-blue-800 font-semibold transition-all duration-200 hover:bg-blue-200 hover:shadow-lg sm:hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+            Feed
         </a>
         <a
             href="/piepost/community"
             class="relative sm:text-lg px-2 py-1 rounded-lg text-blue-800 font-semibold transition-all duration-200 hover:bg-blue-200 hover:shadow-lg sm:hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
-            PiePost-Community
+            Community
         </a>
         <a
             href="/piepost"
             class="relative sm:text-lg px-2 py-1 rounded-lg text-blue-800 font-semibold transition-all duration-200 hover:bg-blue-200 hover:shadow-lg sm:hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
-            PiePost-About
+            About
         </a>
     </nav>
 </div>
