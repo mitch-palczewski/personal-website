@@ -1,5 +1,5 @@
 <div>
-		<h1 class="font-bold text-3xl" >Tutorial for PiePost-1.0.1 with Github</h1>
+		<h1 class="font-bold text-3xl" >Tutorial for PiePost-1.2.0 with Github</h1>
 		<ul>
 			<h1 class="font-bold">What you need:</h1>
 			<ol>1 - PiePost Desktop Application</ol>
@@ -95,5 +95,5 @@
 			/>
 		</div>
 		<h1 class="p-5 text-4xl font-bold">You Are Ready To Start Posting</h1>
-		<p>Note: This is the easiest but not the only way to host your PiePost website.</p>
+		<p>Note: Using Github is a great way to automate posting but for a simpler instillation process take a look at hosting with neocities</p>
 	</div>
